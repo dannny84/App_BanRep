@@ -1,0 +1,45 @@
+/* CSS Document */	
+/* Main*/
+body{
+	background-color:#ccc;
+	width:auto;
+}
+
+p{
+	text-align:justify;
+}
+#logoIntro{
+	margin: 30px auto;
+}
+
+#logoIntro img{
+	transform:rotate(30deg);
+	margin: 10px;
+	border:2px solid #ccc;
+}
+
+/* Component */
+.fit-content, .bottom-footer {
+	        position : absolute;
+	    }
+	    
+.fit-content {
+	top : 55px;
+	bottom : 44px;
+	left : 0;
+	right : 0;
+}
+
+.fit-content > div {
+height : 100%;
+}
+
+.bottom-footer {
+	bottom : 0;
+	width : 100%;
+}
+
+.bottom-footer {
+bottom : 0;
+width : 100%;
+}
