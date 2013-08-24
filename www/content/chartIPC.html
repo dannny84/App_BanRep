@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 
@@ -120,12 +119,14 @@ $(document).ready(function(){
       [0.5221,0.6997,0.8513,0.8849,0.9168,0.9099,0.8339,0.9921,1.1169,1.1764,1.1936,1.1415,1.1181,1.2889,1.1378,1.023,1.1283,1.0417,0.9839,0.587],
       [1.0969,1.188,1.0713,1.2803,1.1787,1.148,1.3229,1.1726,1.3764,1.3887,1.4011,1.3034,1.4368,1.5017,1.4899,1.4123,1.3168,1.1407,0.8458,0.38]
     ];
-    var labels = ["TOTAL", "Alimentos", "Vivienda", "Vestuario", "Salud", "Educación", "Diversión", "Transporte", "Comunicaciones", "Otros Gastos"]
+    var labels = ["TOTAL", "Alimentos", "Vivienda", "Vestuario", "Salud", "Educación", "Diversión", "Transporte", "Comunicaciones", "Otros Gastos"];
     var ticks = [[1, "v01"], [2, "v02"], [3, "v03"], [4, "v04"], [5, "v05"],
       [6, "v06"], [7, "v07"], [8, "v08"], [9, "v09"], [10, "v10"],
       [11, "v11"], [12, "v12"], [13, "v13"], [14, "v14"], [15, "v15"],
       [16, "v16"], [17, "v17"], [18, "v18"], [19, "v19"], [20, "v20"]];
 
+	var rows =   labels.length%4;
+	
     // make the plot
     plot1 = $.jqplot("chart1", data, {
         animate: true,
@@ -140,25 +141,28 @@ $(document).ready(function(){
             renderer: $.jqplot.EnhancedLegendRenderer,
             placement: "outsideGrid",
             labels: labels,
-            location: "ne",
+            location: "n",
             rowSpacing: "0px",
-            rendererOptions: {
+			marginBottom:"20px",
+			marginLeft:"55px",
+			rendererOptions: {
                 // set to true to replot when toggling series on/off
                 // set to an options object to pass in replot options.
                 seriesToggle: 'normal',
-                seriesToggleReplot: {resetAxes: true}
+				numberRows: rows,
+				seriesToggleReplot: {resetAxes: true}
             }
         },
         axes: {
             xaxis: {
-                label: 'Population Percentile',
+                label: '',
                 pad: 1.01,
                 tickOptions: {
                     showGridline: false
                 }
             },
             yaxis: {
-                label: 'Share in Total Expenditure (%)',
+                label: 'Variación Anual (%)',
                 tickOptions: {
                     suffix: '%'
                 },
@@ -174,18 +178,6 @@ $(document).ready(function(){
         }
     });
 
-    // add a date at the bottom.
-
-    var d = new $.jsDate();
-    $("div.jqplot-datestamp").html("Generated on "+d.strftime("%v"));
-
-    // make it resizable.
-    
-    $("div.chart-container").resizable({delay:20});
-
-    $("div.chart-container").bind("resize", function(event, ui) {
-        plot1.replot();
-    });
 });
 
 </script>
