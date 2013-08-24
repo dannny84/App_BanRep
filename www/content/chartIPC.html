@@ -74,8 +74,6 @@
     .jqplot-datestamp {
       font-size: 0.8em;
       color: #777;
-/*      margin-top: 1em;
-      text-align: right;*/
       font-style: italic;
       position: absolute;
       bottom: 15px;
@@ -120,10 +118,10 @@ $(document).ready(function(){
       [1.0969,1.188,1.0713,1.2803,1.1787,1.148,1.3229,1.1726,1.3764,1.3887,1.4011,1.3034,1.4368,1.5017,1.4899,1.4123,1.3168,1.1407,0.8458,0.38]
     ];
     var labels = ["TOTAL", "Alimentos", "Vivienda", "Vestuario", "Salud", "Educación", "Diversión", "Transporte", "Comunicaciones", "Otros Gastos"];
-    var ticks = [[1, "v01"], [2, "v02"], [3, "v03"], [4, "v04"], [5, "v05"],
-      [6, "v06"], [7, "v07"], [8, "v08"], [9, "v09"], [10, "v10"],
-      [11, "v11"], [12, "v12"], [13, "v13"], [14, "v14"], [15, "v15"],
-      [16, "v16"], [17, "v17"], [18, "v18"], [19, "v19"], [20, "v20"]];
+    var ticks = [[201004, "v01"], [201006, "v02"], [201008, "v03"], [201010, "v04"], [201012, "v05"],
+      [201102, "v06"], [201104, "v07"], [201106, "v08"], [201108, "v09"], [201110, "v10"],
+      [201112, "v11"], [201202, "v12"], [201204, "v13"], [201206, "v14"], [201208, "v15"],
+      [201210, "v16"], [201212, "v17"], [201302, "v18"], [201304, "v19"], [201306, "v20"]];
 
 	var rows =   labels.length%4;
 	
@@ -155,10 +153,11 @@ $(document).ready(function(){
         },
         axes: {
             xaxis: {
-                label: '',
+                label: 'w',
                 pad: 1.01,
                 tickOptions: {
-                    showGridline: false
+                    showGridline: true,
+					showLabel:true
                 }
             },
             yaxis: {
@@ -171,10 +170,13 @@ $(document).ready(function(){
             }
         },
         grid: {
-            drawBorder: false,
-            shadow: false,
-            // background: 'rgba(0,0,0,0)'  works to make transparent.
-            background: "white"
+            drawGridlines: true,
+			gridLineColor: "#cccccc",
+			gridLineWidth: 1,
+			backgroundColor: "#fffdf6",
+			borderColor: "#999999",
+			borderWidth: 2,
+			shadow: true
         }
     });
 
