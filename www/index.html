@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Banco de la Rep&uacute;blica</title>
+	<title>Banco de la Rep煤blica</title>
 	<meta charset="UTF-8">
+	<!--meta http-equiv="Refresh" content="5"/-->
 	<meta name="viewport" content="width=devide-width, height=device-height, user-scalable=no" />
-	<meta http-equiv="refresh" content="6000; url=menu.html"> 
 	<link href="css/jquery.mobile.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
 	
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.js"></script>
+	
 </head>
 <body>
-	<div data-role="page" id="index" align="justify">
-	<header>
+	
+	<div data-role="page" id="pagina1" align="justify">
+		<header>
 		<div data-role="header" data-theme="a">
-			<h1>BANCO<wbr> DE LA<wbr> REP&Uacute;BLICA</h1>
-			<a href="menu.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
-					data-wrapperels="span" class="ui-btn-right" title="Version 1"></a>
+			<h1>BANCO<wbr> DE LA<wbr> REP脷BLICA</h1>
+			<a href="index.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
+					data-wrapperels="span" class="ui-btn-right" title="Version 2"></a>
 		</div>
-	</header>
-	<section>
-		<div data-role="content" data-theme="b" align="center" class="fit-content">				
-			<a href="menu.html" data-iconshadow="true" >
-				<img alt="Banco de la Rep&Uacute;blica" src="images/logo.png" />	
-			</a>		
+		</header>
 		
-			 <div id="logoIntro" class="ui-widget-content ui-corner-all">
-				<h1>Indicadores econ&oacute;micos</h1>
-				<img alt="Informaci髇 de Productos" src="images/information.jpg" /><br />
-				<img alt="PIB" src="images/pib.png" />
-				<img alt="TRM" src="images/trm.png" />
-			 </div>
-		 </div>
-	</section>
-	<footer>
-		<div data-role="footer" data-theme="a" class="bottom-footer">
-			<h6>Derechos<wbr> Reservados</h6>
+		<div data-role="content" data-theme="b" align="center" class="fit-content">								
+			<img alt="Banco de la Rep煤blica" src="images/logo.png" />												
+			<h3>Indicadores econ贸micos</h3>					 			
+			<div data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d" data-collapsed-icon="arrow-r" 
+				data-expanded-icon="arrow-d">
+				
+				<div data-role="collapsible">
+			        <h3>TRM</h3>
+			        <ul data-role="listview">
+			            <li><a href="content/infoTRM.html" data-transition="slide" >Informaci贸n</a></li>
+						<li><a href="content/chartTRM.html" data-transition="slide" >Gr谩fica</a></li>
+			        </ul>
+			    </div>
+				
+				 <div data-role="collapsible">
+			        <h3>IPC</h3>
+			        <ul data-role="listview">
+			            <li><a href="content/infoIPC.html" data-transition="slide" >Informaci贸n</a></li>
+						<li><a href="content/chartIPC.html" data-transition="slide" >Gr谩fica</a></li>
+			        </ul>
+			    </div>
+			    
+			    <div data-role="collapsible">
+			        <h3>Acerca de</h3>
+			        <ul data-role="listview">
+			            <li><a href="plantilla.html" data-transition="slide" >Informaci贸n</a></li>
+			        </ul>
+			    </div>
+			    	
+			</div>			
 		</div>
-	</footer>
+		<div data-role="footer"  class="bottom-footer">	
+			<h6>Derechos<wbr> Reservados</h6>
+		</div>	
 	</div>
 </body>
 </html>
