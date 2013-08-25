@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Animated Charts</title>
+	
+	<meta name="viewport" content="width=devide-width, user-scalable=1"/>
+	<link href="css/jquery.mobile.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/shCoreDefault.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/shThemejqPlot.min.css" />
+				
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+		  $(document).bind("mobileinit", 
+			  function () {
+				//Con esta funcion, me sirven los enlaces hacia las graficas
+				$.mobile.ajaxEnabled = false;
+			  }
+		  );
+	 </script>
+	<script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jqplot.min.js"></script> <!-- Libreria principal para el manejo de las graficas -->
+	<script type="text/javascript" src="js/shCore.min.js"></script> <!-- -->
+	<script type="text/javascript" src="js/shBrushJScript.min.js"></script> <!-- -->
+	<script type="text/javascript" src="js/shBrushXml.min.js"></script> <!-- -->
+	<script  type="text/javascript" src="js/jqplot.highlighter.min.js"></script> <!-- Resaltado en los puntos naranja -->
+	<script  type="text/javascript" src="js/jqplot.cursor.min.js"></script> <!-- Cursos mouse -->
+	<script type="text/javascript" src="js/jqplot.pointLabels.min.js"></script><!-- Datos dentro de la grafica -->
+	
+	<script type="text/javascript">
+
+/*function verW(){
+	alert('w: '+w);
+	return w;
+}*/
+	
+	var var1 = '[[2005,99000],[2006,121000],[2007,148000],[2008,114000],[2009,133000]];';
+		
+	var var2 = '[[2005,11800],[2006,12400],[2007,12800],[2008,13200],[2009,12600]];';
+	
+    $(document).ready(
+	function () {
+        var s1 = [[2002,112000],[2003,122000],[2004, 104000],[2005,99000],[2006,121000], 
+        [2007,148000],[2008,114000],[2009,133000],[2010,161000],[2011,173000]];
+        var s2 = [[2002,10200],[2003,10800],[2004,11200],[2005,11800],[2006,12400], 
+        [2007,12800],[2008,13200],[2009,12600],[2010,13100]];
+
+        plot1 = $.jqplot("chart1", [s2, s1], 
+		{
+            // Turns on animatino for all series in this plot.
+            animate: true,
+            // Will animate plot on calls to plot1.replot({resetAxes:true})
+            animateReplot: true,
+            cursor: {
+                show: true,
+                zoom: true,
+                looseZoom: true,
+                showTooltip:true,
+				followMouse: false, //Si es false --> function m sino function n
+				showTooltipOutsideZoom: false, 
+				constrainOutsideZoom: false
+            },
+            series:
+			[
+                {
+                    //pointLabels: {show: true},
+                    renderer: $.jqplot.BarRenderer,
+                    showHighlight: false,
+                    yaxis: 'y2axis',
+                    rendererOptions: {
+                        // Speed up the animation a little bit.
+                        // This is a number of milliseconds.  
+                        // Default for bar series is 3000.  
+                        animation: {speed: 2500},
+                        barWidth: 5,
+                        barPadding: -15,
+                        barMargin: 0,
+                        highlightMouseOver: false
+                    }
+                }, 
+                {
+                    rendererOptions: {
+                        // speed up the animation a little bit.
+                        // This is a number of milliseconds.
+                        // Default for a line series is 2500.
+                        animation: {speed: 2000}
+                    }
+                }
+            ],
+            axesDefaults: {
+                pad: 0
+            },
+            axes: {
+                // These options will set up the x axis like a category axis.
+                xaxis: {
+                    tickInterval: 1,
+                    drawMajorGridlines: true,
+                    drawMinorGridlines: true,
+                    drawMajorTickMarks: false,
+                    rendererOptions: {
+                    tickInset: 0.5,
+                    minorTicks: 1
+                }
+                },
+                yaxis: {
+                    tickOptions: {
+                        formatString: "$%'d"
+                    },
+                    rendererOptions: {
+                        forceTickAt0: true
+                    }
+                },
+                y2axis: {
+                    tickOptions: {
+                        formatString: "$%'d"
+                    },
+                    rendererOptions: {
+                        // align the ticks on the y2 axis with the y axis.
+                        alignTicks: true,
+                        forceTickAt0: true
+                    }
+                }
+            },
+            highlighter: {
+                show: false, 
+                showLabel: false, 
+                tooltipAxes: 'y',
+                sizeAdjust: 7.5 , tooltipLocation : 'ne'
+            }
+        }
+		
+		);
+		
+		//alert('plot1: '+plot1);
+      
+    });
+	
+	function getUrl(){	
+		var url = 'animatedCharts.html?'+var1+'&'+var2;
+		//alert(url);
+		location.href=url;
+		
+	}
+
+
+	</script>
+
+	
+	
+</head>
+<body>
+    <div data-role="page" id="TestJQPlot">
+	
+		<div data-role="header" data-theme="b">
+				<h1>Animated Charts</h1>
+		</div>
+      
+        <div data-role="content">
+
+			<div id="chart1" style="width:600px; height:300px"></div>			
+			<p>
+					JQueryPlot!!!
+			</p>
+			<div id='ejemplo'></div>	
+			<div id='ejemplo1'></div>	
+			<div id='ejemplo2'></div>
+			<div id='ejemplo3'></div>
+			<div id='ejemplo4'></div>			
+			
+			<a href="javascript:void(0)" onClick="getUrl()" data-role="button" data-theme="c">Animated Charts</a>
+			<a href="#pagina1" data-rel="back" data-role="button">Volver</a>
+			
+		</div>
+		
+		<div data-role="footer" data-theme="b">
+				<h4>Derechos Reservados Asesoftware</h4>
+		</div>
+        
+    </div>
+
+</body>
+</html>
