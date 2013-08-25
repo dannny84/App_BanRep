@@ -20,7 +20,7 @@ p{
 
 /* Component */
 .fit-content, .bottom-footer {
-	        position : absolute;
+	        position : relative;
 	    }
 	    
 .fit-content {
@@ -39,7 +39,3 @@ height : 100%;
 	width : 100%;
 }
 
-.bottom-footer {
-bottom : 0;
-width : 100%;
-}
