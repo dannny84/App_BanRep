@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--meta http-equiv="Refresh" content="5"/-->
+		<meta name="viewport" content="width=devide-width, user-scalable=no" />
+		<link href="../css/jquery.mobile.css" rel="stylesheet" type="text/css">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script>
+			  $(document).bind("mobileinit", 
+							  function () {
+								//Con esta funcion, me sirven los enlaces hacia las graficas
+								$.mobile.ajaxEnabled = false;
+							  }
+			  );
+		 </script>	
+		<script type="text/javascript" src="../js/jquery.mobile.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+
+	</head>
+<body>
+	
+	<div data-role="page" id="pagina1" >
+		
+		<div data-role="header" data-theme="a">
+			<h1>BANCO<wbr> DE LA<wbr> REPÚBLICAAAA</h1>
+			<a href="../menu.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
+					data-wrapperels="span" class="ui-btn-right" title="Version 2"></a>
+		</div>		
+		
+		<div data-role="content" data-theme="b" align="center" class="fit-content">								
+			<img alt="Banco de la República" src="../images/logo.png" />												
+			<h3>Tasa Representativa del Mercado</h3>					 			
+			<p>
+				La tasa de cambio representativa del mercado (TRM) es la cantidad de pesos colombianos por un dólar de los Estados Unidos (antes del 27 de noviembre de 1991 la tasa de cambio del mercado colombiano estaba dada por el valor de un certificado de cambio). La TRM se calcula con base en las operaciones de compra y venta de divisas entre intermediarios financieros que transan en el mercado cambiario colombiano, con cumplimiento el mismo día cuando se realiza la negociación de las divisas. Actualmente la Superintendencia Financiera de Colombia es la que calcula y certifica diariamente la TRM con base en las operaciones  registradas el día hábil inmediatamente anterior. Para mayor información sobre la metodología de cálculo puede consultarse la Circular Reglamentaria Externa del Banco de la República DODM-146 del 21 de septiembre de 2004 (Asunto 8).
+			</p>
+			<a href="chartTRM.html" data-transition="slide" >Gráfica TRM</a>
+		</div>
+		<div data-role="footer"  class="bottom-footer">	
+			<h6>Derechos<wbr> Reservados</h6>
+		</div>	
+	</div>
+</body>
+</html>
