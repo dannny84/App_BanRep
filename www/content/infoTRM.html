@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Banco de la República</title>
-	<!--meta charset="UTF-8"/-->
-	<!--meta http-equiv="Refresh" content="5"/-->
-	<meta name="viewport" content="width=devide-width, user-scalable=no" />
-	<link href="../css/jquery.mobile.css" rel="stylesheet" type="text/css">
-	<link href="../css/style.css" rel="stylesheet" type="text/css">
-	
-	<script type="text/javascript" src="../js/jquery.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
-	<script type="text/javascript" src="../js/jquery.mobile.js"></script>
-	
-	
-</head>
+	<head>
+		<!--meta http-equiv="Refresh" content="5"/-->
+		<meta name="viewport" content="width=devide-width, user-scalable=no" />
+		<link href="../css/jquery.mobile.css" rel="stylesheet" type="text/css">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script>
+			  $(document).bind("mobileinit", 
+							  function () {
+								//Con esta funcion, me sirven los enlaces hacia las graficas
+								$.mobile.ajaxEnabled = false;
+							  }
+			  );
+		 </script>	
+		<script type="text/javascript" src="../js/jquery.mobile.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+
+	</head>
 <body>
 	
 	<div data-role="page" id="pagina1" >
