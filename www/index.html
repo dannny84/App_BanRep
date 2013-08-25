@@ -4,7 +4,6 @@
 		<!--meta http-equiv="Refresh" content="5"/-->
 		<meta name="viewport" content="width=devide-width, user-scalable=no" />
 		<link href="css/jquery.mobile.css" rel="stylesheet" type="text/css">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script>
 			  $(document).bind("mobileinit", 
@@ -15,50 +14,42 @@
 			  );
 		 </script>	
 		<script type="text/javascript" src="js/jquery.mobile.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
 
 	</head>
 	<body>
 		<div data-role="page" id="pagina1">
-			<div data-role="header" data-theme="a">
-				<h1>BANCO<wbr> DE LA<wbr> REP脷BLICA</h1>
-				<a href="index.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
-						data-wrapperels="span" class="ui-btn-right" title="Version 2"></a>
+			<div data-role="header" data-theme="b">
+				<h1>ASESOFTWARE</h1>
 			</div>
-		<div data-role="content" data-theme="b" align="center" class="fit-content">								
-			<img alt="Banco de la Rep煤blica" src="images/logo.png" />												
-			<h3>Indicadores econ贸micos</h3>					 			
-			<div data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d" data-collapsed-icon="arrow-r" 
-				data-expanded-icon="arrow-d">
-				
-				<div data-role="collapsible">
-			        <h3>TRM</h3>
-			        <ul data-role="listview">
-			            <li><a href="content/infoTRM.html" data-transition="slide" >Informaci贸n</a></li>
-						<li><a href="content/chartTRM.html" data-transition="slide" >Gr谩fica</a></li>
-			        </ul>
-			    </div>
-				
-				 <div data-role="collapsible">
-			        <h3>IPC</h3>
-			        <ul data-role="listview">
-			            <li><a href="content/infoIPC.html" data-transition="slide" >Informaci贸n</a></li>
-						<li><a href="content/chartIPC.html" data-transition="slide" >Gr谩fica</a></li>
-			        </ul>
-			    </div>
-			    
-			    <div data-role="collapsible">
-			        <h3>Acerca de</h3>
-			        <ul data-role="listview">
-			            <li><a href="content/orientacion.html" data-transition="slide" >Informaci贸n</a></li>
-			        </ul>
-			    </div>
-			    	
-			</div>			
+			<div data-role="content">
+				<p>
+					<!--a href="#pagina2" data-role="button" data-theme="a" data-inline="true">Enlace 1</a-->
+					<a href="#pagina2" data-role="button" data-transition="slide" data-theme="a">Enlace al mismo Documento</a>
+					<a href="content/infoTRM.html" rel="external" data-role="button" data-theme="b">Enlace a mi Programa</a>
+					<a href="http://www.google.com.co" rel="external" data-role="button">Ir a Google</a>
+					<a href="content/chartTRM.html" data-role="button" data-theme="c">Gr谩fica Din谩mica</a>
+				</p>				
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Derechos Reservados Asesoftware</h4>
+			</div>
 		</div>
-		<div data-role="footer"  class="bottom-footer">	
-			<h6>Derechos<wbr> Reservados</h6>
-		</div>	
-	</div>
-</body>
+		<div data-role="page" id="pagina2" data-add-back-btn="true">
+			<div data-role="header" data-theme="d">
+				<h1>Pagina Interna 2</h1>
+			</div>
+			<div data-role="content">
+				<p>
+					Hola.... hemos llegado bien a la pagina 2!!!
+					
+					La tasa de cambio representativa del mercado (TRM) es la cantidad de pesos colombianos por un d髄ar de los Estados Unidos (antes del 27 de noviembre de 1991 la tasa de cambio del mercado colombiano estaba dada por el valor de un certificado de cambio). La TRM se calcula con base en las operaciones de compra y venta de divisas entre intermediarios financieros que transan en el mercado cambiario colombiano, con cumplimiento el mismo d韆 cuando se realiza la negociaci髇 de las divisas. Actualmente la Superintendencia Financiera de Colombia es la que calcula y certifica diariamente la TRM con base en las operaciones  registradas el d韆 h醔il inmediatamente anterior. Para mayor informaci髇 sobre la metodolog韆 de c醠culo puede consultarse la Circular Reglamentaria Externa del Banco de la Rep鷅lica DODM-146 del 21 de septiembre de 2004 (Asunto 8).
+					
+					<a href="#pagina1" data-rel="back" data-role="button">Volver</a>
+				</p>				
+			</div>
+			<div data-role="footer" data-theme="d">
+				<h4>Derechos Reservados Asesoftware</h4>
+			</div>
+		</div>		
+	</body>
 </html>
