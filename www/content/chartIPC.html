@@ -103,6 +103,7 @@
 
   
   <script class="code" type="text/javascript">
+  
 $(document).ready(function(){
 
 	var data = [
@@ -118,10 +119,11 @@ $(document).ready(function(){
       [1.0969,1.188,1.0713,1.2803,1.1787,1.148,1.3229,1.1726,1.3764,1.3887,1.4011,1.3034,1.4368,1.5017,1.4899,1.4123,1.3168,1.1407,0.8458,0.38]
     ];
     var labels = ["TOTAL", "Alimentos", "Vivienda", "Vestuario", "Salud", "Educación", "Diversión", "Transporte", "Comunicaciones", "Otros Gastos"];
-    var ticks = ["201004", "201006", "201008", "201010", "201012", 
-      "201102", "201104", "201106", "201108", "201110", 
-      "201112", "201202", "201204", "201206", "201208", 
-      "201210", "201212", "201302", "201304", "201306"];
+    var ticks = [
+	  201004, 201006, 201008, 201010, 201012, 
+      201102, 201104, 201106, 201108, 201110, 
+      201112, 201202, 201204, 201206, 201208, 
+      201210, 201212, 201302, 201304, 201306];
 	  
 	var dataTotal = new Array();
 	var dataAlimentos = new Array();
@@ -153,8 +155,8 @@ $(document).ready(function(){
     plot1 = $.jqplot("chart1", [dataTotal, dataAlimentos, dataVivienda,dataVestuario,dataSalud,dataEducacion,dataDiversion,dataTransporte,dataComunicaciones,dataOtros], {
         animate: true,
         axesDefaults: {
-            labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-		},
+			renderer: $.jqplot.CanvasAxisTickRenderer
+       },
         seriesDefaults: {
             showMarker: false
         },
@@ -177,21 +179,24 @@ $(document).ready(function(){
         },
         axes: {
             xaxis: {
-				renderer:$.jqplot.DateAxisRenderer,
-				label: '',
-                pad: 0,
-				tickOptions: {
+				renderer: $.jqplot.DateAxisRenderer,
+				tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                label: '',
+                tickOptions: {
                     showGridline: true,
-					formatString:'%Y%m'
-				}
+					//formatString:'%Y%m',
+					angle: -45
+		  		},
+				//min: "2010-02-01 00:00:00 AM",
+                //max: "2013-08-01 00:00:00 AM",
+				//tickInterval:'1 month'
             },
             yaxis: {
+				labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                 label: 'Variación Anual (%)',
                 tickOptions: {
                     suffix: '%'
                 },
-                padMin: 0,
-                padMax: 1.05
             }
         },
         grid: {
