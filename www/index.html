@@ -1,55 +1,46 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<!--meta http-equiv="Refresh" content="5"/-->
-		<meta name="viewport" content="width=devide-width, user-scalable=no" />
-		<link href="css/jquery.mobile.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script>
-			  $(document).bind("mobileinit", 
-							  function () {
-								//Con esta funcion, me sirven los enlaces hacia las graficas
-								$.mobile.ajaxEnabled = false;
-							  }
-			  );
-		 </script>	
-		<script type="text/javascript" src="js/jquery.mobile.js"></script>
-
-	</head>
-	<body>
-		<div data-role="page" id="pagina1">
-			<div data-role="header" data-theme="b">
-				<h1>ASESOFTWARE</h1>
-			</div>
-			<div data-role="content">
-				<p>
-					<!--a href="#pagina2" data-role="button" data-theme="a" data-inline="true">Enlace 1</a-->
-					<a href="#pagina2" data-role="button" data-transition="slide" data-theme="a">Enlace al mismo Documento</a>
-					<a href="infoTRM.html" rel="external" data-role="button" data-theme="b">Enlace a mi Programa</a>
-					<a href="http://www.google.com.co" rel="external" data-role="button">Ir a Google</a>
-					<a href="TestJQPlotDinamico.html" data-role="button" data-theme="c">GrÃ¡fica DinÃ¡mica</a>
-				</p>				
-			</div>
-			<div data-role="footer" data-theme="b">
-				<h4>Derechos Reservados Asesoftware</h4>
-			</div>
+<head>
+	<title>Banco de la Rep&uacute;blica</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=devide-width, height=device-height, user-scalable=no" />
+	<meta http-equiv="refresh" content="6000; url=menu.html"> 
+	<link href="css/jquery.mobile.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--script type="text/javascript" charset="utf-8" src="js/cordova.js"></script-->
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+	<div data-role="page" id="index" align="justify">
+	<header>
+		<div data-role="header" data-theme="a">
+			<h1>BANCO<wbr> DE LA<wbr> REP&Uacute;BLICA</h1>
+			<a href="menu.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
+					data-wrapperels="span" class="ui-btn-right" title="Version 1"></a>
 		</div>
-		<div data-role="page" id="pagina2" data-add-back-btn="true">
-			<div data-role="header" data-theme="d">
-				<h1>Pagina Interna 2</h1>
-			</div>
-			<div data-role="content">
-				<p>
-					Hola.... hemos llegado bien a la pagina 2!!!
-					
-					La tasa de cambio representativa del mercado (TRM) es la cantidad de pesos colombianos por un dólar de los Estados Unidos (antes del 27 de noviembre de 1991 la tasa de cambio del mercado colombiano estaba dada por el valor de un certificado de cambio). La TRM se calcula con base en las operaciones de compra y venta de divisas entre intermediarios financieros que transan en el mercado cambiario colombiano, con cumplimiento el mismo día cuando se realiza la negociación de las divisas. Actualmente la Superintendencia Financiera de Colombia es la que calcula y certifica diariamente la TRM con base en las operaciones  registradas el día hábil inmediatamente anterior. Para mayor información sobre la metodología de cálculo puede consultarse la Circular Reglamentaria Externa del Banco de la República DODM-146 del 21 de septiembre de 2004 (Asunto 8).
-					
-					<a href="#pagina1" data-rel="back" data-role="button">Volver</a>
-				</p>				
-			</div>
-			<div data-role="footer" data-theme="d">
-				<h4>Derechos Reservados Asesoftware</h4>
-			</div>
-		</div>		
-	</body>
+	</header>
+	<section>
+		<div data-role="content" data-theme="b" align="center" class="fit-content">				
+			<a href="menu.html" data-iconshadow="true" >
+				<img alt="Banco de la Rep&Uacute;blica" src="images/logo.png" />	
+			</a>		
+		
+			 <div id="logoIntro" class="ui-widget-content ui-corner-all">
+				<h1>Indicadores econ&oacute;micos</h1>
+				<img alt="Información de Productos" src="images/information.jpg" /><br />
+				<img alt="PIB" src="images/pib.png" />
+				<img alt="TRM" src="images/trm.png" />
+			 </div>
+		 </div>
+	</section>
+	<footer>
+		<div data-role="footer" data-theme="a" class="bottom-footer">
+			<h6>Derechos<wbr> Reservados</h6>
+		</div>
+	</footer>
+	</div>
+</body>
 </html>

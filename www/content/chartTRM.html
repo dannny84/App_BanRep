@@ -14,14 +14,13 @@
   	
   	<script type="text/javascript" src="../js/jquery.js"></script>
   	<script>
-		  $(document).bind("mobileinit", 
-						  function () {
-							//Con esta funcion, habilito los enlaces hacia las graficas
-							$.mobile.ajaxEnabled = false;
-
-							window.orientation = 1;
-						  }
-		  );
+		$(window).bind("resize", function(){
+			var orientation = window.orientation;
+			var new_orientation = (orientation) ? 0 : 180 + orientation;
+			$('body').css({
+				"-webkit-transform": "rotate(" + new_orientation + "deg)"
+			});
+		});
  	</script>
   	<script type="text/javascript" src="..js/jquery.mobile.js"></script>
   	
