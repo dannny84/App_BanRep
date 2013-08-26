@@ -1,8 +1,9 @@
 /* CSS Document */	
 /* Main*/
-body{
-	background-color:#ccc;
-	width:auto;
+body, #pagina1{
+	background: linear-gradient(#DDDDDD, #CCCCCC) repeat scroll 0 0 #ddd;
+	width:100%;
+	background: #ddd;
 }
 
 p{
@@ -15,27 +16,34 @@ p{
 #logoIntro img{
 	transform:rotate(30deg);
 	margin: 10px;
-	border:2px solid #ccc;
+	border:2px solid #ddd;
 }
 
 /* Component */
-.fit-content, .bottom-footer {
-	        position : relative;
-	    }
+#clearFooter{
+	height:40px;
+	background: #ddd;
+}
+
+#footer  {
+	width:100%;
+	margin:auto;
+	position:absolute;
+	bottom:0;
+	height:40px;
+	clear:both;
+	background: #ddd;
+}
 	    
-.fit-content {
-	top : 55px;
-	bottom : 44px;
-	left : 0;
-	right : 0;
+#content {
+	position : relative;
+	padding-top : 10px;
+	padding-bottom : 44px;
+	margin: auto;
+	position:relative;
+		background: #ddd;
 }
 
-.fit-content > div {
-height : 100%;
+.ui-body-b, .ui-overlay-b{
+background: #ddd;
 }
-
-.bottom-footer {
-	bottom : 0;
-	width : 100%;
-}
-
