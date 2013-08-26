@@ -23,7 +23,7 @@ $(function(){
 	
 	if(window.orientation == 0){
 		var ori = "portrait";
-		
+		//window.orientation = 1;
 		changeOrientation();
 		
 	}else{
@@ -33,10 +33,13 @@ $(function(){
 	
 	function changeOrientation(){
 		
-		var new_orientation = 90;
+		var new_orientation = 90;		
+		
 		$('body').css({
-				"-webkit-transform": "rotate(" + new_orientation + "deg)"
+			"-webkit-transform": "rotate(" + new_orientation + "deg)"
 		});
+		
+		$("#chart1").css({"height":"100%","width":"100%"});
 	}
 
 });
