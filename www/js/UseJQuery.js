@@ -32,7 +32,7 @@ function CallService()
 }
 //Función que se ejecuta si realizó completa la petición
 function OnSuccess(data, status, req)
-{		//alert("Metodo OnSuccess");
+{		alert("Metodo OnSuccess");
 		//Check to see if an object is a plain object (created using "{}" or "new Object").
 		//alert(jQuery.isPlainObject(data));
 		//alert($.isEmptyObject(data)); 
@@ -44,7 +44,7 @@ function OnSuccess(data, status, req)
 }
 function OnError(request, status, error)  //Función que se ejecuta si ocurre algún error
 {
-		//alert("Metodo OnError");
+		alert("Metodo OnError");
 		alert(request.status + " " + request.statusText);
 }
 $(function() {
