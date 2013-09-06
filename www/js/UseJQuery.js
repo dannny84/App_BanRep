@@ -37,9 +37,9 @@ function OnSuccess(data, status, req)
 		//alert(jQuery.isPlainObject(data));
 		//alert($.isEmptyObject(data)); 
 		//alert(JSON.stringify(data));
-		console.log(data);
+		//console.log(data);
 		//$(data).find("return").text();
-		$("#filaRespuesta").css("display","table");
+		//$("#filaRespuesta").css("display","table");
 		$("#respuesta").val(data.getElementsByTagName("ns:return")[0].textContent);
 }
 function OnError(request, status, error)  //Función que se ejecuta si ocurre algún error
