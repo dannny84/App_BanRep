@@ -40,7 +40,10 @@ function OnSuccess(data, status, req)
 		//console.log(data);
 		//$(data).find("return").text();
 		//$("#filaRespuesta").css("display","table");
-		alert(data.getElementsByTagName("ns:return")[0].textContent);
+		
+		alert("Status: "+status);
+
+		alert($(req.responseXML).find("ns:return").text());
 		//$("#respuesta").val(data.getElementsByTagName("ns:return")[0].textContent);
 }
 function OnError(request, status, error)  //Función que se ejecuta si ocurre algún error
