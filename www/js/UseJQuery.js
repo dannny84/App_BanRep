@@ -1,7 +1,7 @@
 function CallService()
 {
     //Creamos la variable que contiene la url del webservice
-    var webServiceURL = 'http://localhost:8080/WSPrueba/services/Hola?wsdl';
+    var webServiceURL = 'http://192.168.200.23:8080/WSPrueba/services/Hola?wsdl';
     //Este es el mensaje SOAP, dentro de las etiquetas <CI>'+ $('#ci').val() +'</CI> hacemos uso de una función JQuery para obtener valor que está en el campo de texto
     //var soapMessage = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><holaMundo xmlns="http://src"></holaMundo></soap:Body></soap:Envelope>';
 	
@@ -11,7 +11,7 @@ function CallService()
 	
 	if($("#CI").val().length > 0){
 		$.ajax({
-			url: "http://192.168.43.239:8080/WSPrueba/services/Hola/saludo", 
+			url: "http://192.168.200.23:8080/WSPrueba/services/Hola/saludo", 
 			type: "POST",
 			data: { nombre : $("#CI").val() }, 
 			success: OnSuccess,
@@ -19,7 +19,7 @@ function CallService()
 		});
 	}else{
 		$.ajax({
-			url: "http://192.168.43.239:8080/WSPrueba/services/Hola/holaMundo", 
+			url: "http://192.168.200.23:8080/WSPrueba/services/Hola/holaMundo", 
 			type: "POST",
 			//contentType: "text/xml;charset=UTF-8",
 			//dataType: "xml",
