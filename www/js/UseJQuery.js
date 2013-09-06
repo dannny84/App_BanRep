@@ -20,7 +20,7 @@ function CallService()
 	}else{
 		$.ajax({
 			url: "http://192.168.200.23:8080/WSPrueba/services/Hola/holaMundo", 
-			type: "POST",
+			type: "GET",
 			contentType: "text/xml",
 			//contentType: "text/xml;charset=UTF-8",
 			dataType: "xml",
