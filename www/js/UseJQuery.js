@@ -11,7 +11,7 @@ function CallService()
 	
 	if($("#CI").val().length > 0){
 		$.ajax({
-			url: "http://192.168.200.23:8080/WSPrueba/services/Hola/saludo", 
+			url: "http://localhost:8080/WSPrueba/services/Hola/saludo", 
 			type: "POST",
 			data: { nombre : $("#CI").val() }, 
 			success: OnSuccess,
@@ -19,7 +19,7 @@ function CallService()
 		});
 	}else{
 		$.ajax({
-			url: "http://192.168.200.23:8080/WSPrueba/services/Hola/holaMundo", 
+			url: "http://localhost:8080/WSPrueba/services/Hola/holaMundo", 
 			type: "GET",
 			contentType: "text/xml",
 			//contentType: "text/xml;charset=UTF-8",
