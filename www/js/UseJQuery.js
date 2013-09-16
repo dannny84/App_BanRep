@@ -43,8 +43,9 @@ function OnSuccess(data, status, req)
 		//$("#filaRespuesta").css("display","table");
 		
 		alert("Status: "+status);
-		alert("Data: "+data.getElementsByTagName("ns:return")[0].textContent);
-		alert($(req.responseXML).find("ns:return").text());
+		//alert("Data: "+data.getElementsByTagName("ns:return")[0].textContent);
+		alert($(data).find("ns:return").text());
+		alert($(data).find("return").text());
 		//$("#respuesta").val(data.getElementsByTagName("ns:return")[0].textContent);
 }
 function OnError(request, status, error)  //Función que se ejecuta si ocurre algún error
