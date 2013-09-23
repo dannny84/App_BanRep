@@ -1,66 +1,109 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 
-    <title>Banco de la República - Chart TRM</title>
+    <title>Banco de la República - Chart IPC</title>
 	<meta charset="ISO-8859-1">
-	<meta name="viewport" content="width=devide-width, height=device-height, user-scalable=no" />
+	<meta name="viewport" content="width=device-height, user-scalable=no" />
 	<link href="../css/jquery.mobile.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="../css/jquery.jqplot.css" />
-    <link type="text/css" rel="stylesheet" href="../css/shCoreDefault.css" />
-    <link type="text/css" rel="stylesheet" href="../css/shThemejqPlot.css" />  
-  	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css" />
-  	
-  	<script type="text/javascript" src="../js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.jqplot.css"/> 
+	<link type="text/css" rel="stylesheet" href="../css/shCoreDefault.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/shThemejqPlot.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="../css/examples.css" />
+	
+	<script type="text/javascript" src="../js/jquery.js"></script>
   	<script>
-/*
-$(function(){
+		  $(document).bind("mobileinit", 
+						  function () {
+							//Con esta funcion, habilito los enlaces hacia las graficas
+							$.mobile.ajaxEnabled = false;
 
-	// Set Inital orientation
-	// get the initial orientation from window which
-	// returns 0 for portrait and 1 for landscape
-	
-	if(window.orientation == 0){			
-		changeOrientation();		
-	}
-	
-	function changeOrientation(){
-		
-		var new_orientation = 90;		
-		
-		$('body').css({
-			"-webkit-transform": "rotate(" + new_orientation + "deg)"
-		});
-		
-		$("#chart1").css({"height":"100%","width":"100%"});
-	}
-
-});*/
+							window.orientation = 1;
+						  }
+		  );
  	</script>
-  	<script type="text/javascript" src="..js/jquery.mobile.js"></script>
-  	
-  	
+  	<script type="text/javascript" src="..js/jquery.mobile.js"></script>  	
 	<script type="text/javascript" src="../js/jquery.jqplot.js"></script>
+	<script type="text/javascript" src="..js/example.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../js/shCore.js"></script>
 	<script type="text/javascript" src="../js/shBrushJScript.js"></script>
 	<script type="text/javascript" src="../js/shBrushXml.js"></script>
-	<script type="text/javascript" src="../js/jqplot.dateAxisRenderer.js"></script>
-	<script type="text/javascript" src="../js/jqplot.logAxisRenderer.js"></script>
 	<script type="text/javascript" src="../js/jqplot.canvasTextRenderer.js"></script>
+	<script type="text/javascript" src="../js/jqplot.canvasAxisLabelRenderer.js"></script>
+	<script type="text/javascript" src="../js/jqplot.enhancedLegendRenderer.js"></script>
 	<script type="text/javascript" src="../js/jqplot.canvasAxisTickRenderer.js"></script>
 	<script type="text/javascript" src="../js/jqplot.highlighter.js"></script>
-    
-    <style type="text/css">
-    
-        .jqplot-target {
+	<script type="text/javascript" src="../js/jqplot.dateAxisRenderer.js"></script>
+	<script type="text/javascript" src="../js/jqplot.logAxisRenderer.js"></script>
+
+</head>
+
+  <style type="text/css">
+
+    .chart-container {
+        /*border: 1px solid darkblue;*/
+        /*padding: 0px 0px 30px 30px;*/
+        width: 900px;
+        height: 400px;
+        
+    }
+
+    table.jqplot-table-legend {
+        font-size: 0.65em;
+        line-height: 1em;
+        margin: 0px 0px 10px 15px;
+    }
+
+    td.jqplot-table-legend-label {
+      width: 20em;
+    }
+
+    div.jqplot-table-legend-swatch {
+        border-width: 1.5px 6px;
+    }
+
+    div.jqplot-table-legend-swatch-outline {
+        border: none;
+    }
+
+    #chart1 {
+        width: 96%;
+        height: 96%;
+    }
+
+    .jqplot-datestamp {
+      font-size: 0.8em;
+      color: #777;
+      font-style: italic;
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+    }
+
+    td.controls li {
+        list-style-type: none;
+    }
+
+    td.controls ul {
+        margin-top: 0.5em;
+        padding-left: 0.2em;
+    }
+
+    pre.code {
+        margin-top: 45px;
+        clear: both;
+    }
+	
+	 .jqplot-target {
             margin: 20px;
             height: device-width;
             width: device-height;
             color: #dddddd;
         }
-
-        .ui-widget-content {
+	
+	    .ui-widget-content {
             background: rgb(57,57,57);
         }
 
@@ -78,12 +121,16 @@ $(function(){
 		body {
 			background-color: #393939;
 		}
+		
+		
 
-    </style>
-    
-    <script type="text/javascript">
+  </style>
+  <script type="text/javascript">
 
         $(document).ready(function () {
+		//$("#titulo").css("display", "none");
+		//$("#titulo").css("display", "block");
+		
             $.jqplot._noToImageButton = true;
             var prevYear = [['2011-11-11 09:27:42 AM', 1969,5]];
 
@@ -197,7 +244,7 @@ var currYear = [
                         tickRenderer: $.jqplot.CanvasAxisTickRenderer,
                         tickOptions: {
                             formatString: '%H:%M',
-                            angle: -90,
+                            angle: 0,
                             textColor: '#dddddd'
                         },
                         min: "2011-11-11 09:27:00 AM",
@@ -217,25 +264,22 @@ var currYear = [
                 }
             });
 
-              $('.jqplot-highlighter-tooltip').addClass('ui-corner-all')
         });
+
 		
-
-	
-
-
+		
     </script>
-   
-</head>
-<body>
-	<div data-role="page" id="pagina3">
-		<div id="example-content" data-role="content" align="justify">			
-		    <div id="example-content">
-		        <div class="ui-widget-content ui-corner-bottom">
-		            <div id="chart1"></div>
-		        </div>
-		    </div>
-		</div>	        
-	</div>
+<body style="width: 900px; height: 400px;">
+
+		<div id="titulo" style="color: white; text-align: center" >
+			<h5>Apertura: $1,980 el 21/08/2013</h5>
+		</div>
+		<div class="chart-container">    
+			<div id="chart1"></div>
+		   
+		</div>
+
 </body>
+
+
 </html>

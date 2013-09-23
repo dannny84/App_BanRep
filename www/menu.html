@@ -23,9 +23,7 @@
 	<body>
 		<div data-role="page" id="pagina1">
 		<div data-role="header" data-theme="a">
-			<h1>BANCO<wbr> DE LA<wbr> REPÚBLICA</h1>
-			<a href="index.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
-					data-wrapperels="span" class="ui-btn-right" title="Version 2"></a>
+			<h1>BANCO<wbr> DE LA<wbr> REP&Uacute;BLICA</h1>
 		</div>
 		<div id="content">
 			<div data-role="content" data-theme="b" align="center" class="fit-content">								
@@ -37,16 +35,18 @@
 					<div data-role="collapsible">
 						<h3>TRM</h3>
 						<ul data-role="listview">
-							<li><a href="content/infoTRM.html" data-transition="slide" >Información</a></li>
+							<li><a onclick="$.mobile.changePage('content/infoTRM.html', { transition: 'slide'} )">Información</a></li>
 							<li><a href="content/chartTRM.html" data-transition="slide" >Gráfica</a></li>
+							<!--li><a onclick="$.mobile.changePage('content/chartTRM.html', { transition: 'slide'} )">Gráfica</a></li-->
 						</ul>
 					</div>
 					
 					 <div data-role="collapsible">
 						<h3>IPC</h3>
 						<ul data-role="listview">
-							<li><a href="content/infoIPC.html" data-transition="slide" >Información</a></li>
+							<li><a onclick="$.mobile.changePage('content/infoIPC.html', { transition: 'slide'} )">Información</a></li>
 							<li><a href="content/chartIPC.html" data-transition="slide" >Gráfica</a></li>
+							<!--li><a onclick="$.mobile.changePage('content/chartIPC.html', { transition: 'slide'} )">Gráfica</a></li-->
 						</ul>
 					</div>
 					
@@ -54,7 +54,7 @@
 						<h3>Acerca de</h3>
 						<ul data-role="listview">
 							<!--li><a href="content/acercaDe.html" data-transition="slide" >Información</a></li-->
-							<li><a href="wsMobile.html" data-transition="slide" >Información</a></li>
+							<li><a onclick="$.mobile.changePage('content/acercaDe.html', { transition: 'slide'} )" >Información</a></li>
 						</ul>
 					</div>
 				</div>			
@@ -62,7 +62,7 @@
 		</div>
 		<div id="clearFooter"></div>
 		<div id="footer">
-			<div data-role="footer"  class="bottom-footer">	
+			<div data-role="footer" class="bottom-footer">	
 				<h6>Derechos<wbr> Reservados</h6>
 			</div>
 		</div>

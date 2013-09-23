@@ -20,8 +20,8 @@
 		<header>
 		<div data-role="header" data-theme="a">
 			<h1>BANCO<wbr> DE LA<wbr> REPÚBLICA</h1>
-			<a href="../menu.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
-					data-wrapperels="span" class="ui-btn-right" title="Version 2"></a>
+			<a href="../menu.html" data-icon="home" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
+					data-rel="back" data-wrapperels="span" class="ui-btn-right" title="Menú"></a>
 		</div>
 		</header>
 		<div id="content">
@@ -31,7 +31,8 @@
 				<p>
 					El índice de precios al consumidor (IPC) mide la variación porcentual de los precios de un mes con respecto a otro mes de referencia, para un conjunto de bienes y servicios representativos del consumo de los hogares colombianos. El cálculo del IPC para Colombia lo hace mensualmente el Departamento Administrativo Nacional de Estadistica (DANE).
 				</p>
-				<a href="chartIPC.html" data-transition="slide" >Gráfica IPC</a>
+				<a href="chartIPC.html" data-transition="slide" data-role="button" data-theme="a" >Gráfica IPC</a>
+				<!--a onclick="$.mobile.changePage('chartIPC.html', { transition: 'pop'} )" data-role="button" data-theme="a">Gráfica IPC</a-->
 			</div>
 		</div>
 		<div id="clearFooter"></div>

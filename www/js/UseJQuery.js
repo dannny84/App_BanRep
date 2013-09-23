@@ -9,7 +9,17 @@ function CallService()
  
     //Llamamos a la función AJAX de JQuery
 	
-	if($("#CI").val().length > 0){
+	$.ajax({
+			url: "http://192.168.0.16:8080/WSPrueba/services/Hola/consultaIPC", 
+			type: "GET",
+			contentType: "text/xml",
+			dataType: "xml",
+			data: { "":"" },
+			success: OnSuccess,
+			error:OnError
+		});
+	
+	/*if($("#CI").val().length > 0){
 		$.ajax({
 			url: "http://192.168.0.16:8080/WSPrueba/services/Hola/saludo", 
 			type: "POST",
@@ -28,25 +38,25 @@ function CallService()
 			success: OnSuccess,
 			error:OnError
 		});
-	}
+	}*/
     return false;
 }
 //Función que se ejecuta si realizó completa la petición
 function OnSuccess(data, status, req)
 {		//alert("Metodo OnSuccess");
-		//Check to see if an object is a plain object (created using "{}" or "new Object").
-		//alert(jQuery.isPlainObject(data));
-		//alert($.isEmptyObject(data)); 
-		//alert(JSON.stringify(data));
-		//console.log(data);
-		//$(data).find("return").text();
-		//$("#filaRespuesta").css("display","table");
 		
 		alert("Status: "+status);
-		//alert("Data: "+data.getElementsByTagName("ns:return")[0].textContent);
-		alert($(data).find("ns:return").text());
-		alert($(data).find("return").text());
-		//$("#respuesta").val(data.getElementsByTagName("ns:return")[0].textContent);
+		
+		var retorno = data.getElementsByTagName("ns:return")[0].textContent;
+		
+		
+		
+		//Este funciona en IE
+		alert("Data: "+data.getElementsByTagName("ns:return")[0].textContent);
+		
+		//Este Funciona en el dispositivo
+		//alert($(data).find("return").text());
+				
 }
 function OnError(request, status, error)  //Función que se ejecuta si ocurre algún error
 {

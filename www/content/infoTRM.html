@@ -19,9 +19,9 @@
 	<div data-role="page" id="pagina1" >
 		
 		<div data-role="header" data-theme="a">
-			<h1>BANCO<wbr> DE LA<wbr> REPÚBLICAAAA</h1>
-			<a href="../menu.html" data-icon="grid" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" 
-					data-wrapperels="span" class="ui-btn-right" title="Version 2"></a>
+			<h1>BANCO<wbr> DE LA<wbr> REPÚBLICA</h1>
+			<a href="../menu.html" data-icon="home" data-iconpos="notext" data-rel="back"
+			data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn-right" title="Menú"></a>
 		</div>		
 		<div id="content">
 			<div data-role="content" data-theme="b" align="center" class="fit-content">								
@@ -30,7 +30,8 @@
 				<p>
 					La tasa de cambio representativa del mercado (TRM) es la cantidad de pesos colombianos por un dólar de los Estados Unidos (antes del 27 de noviembre de 1991 la tasa de cambio del mercado colombiano estaba dada por el valor de un certificado de cambio). La TRM se calcula con base en las operaciones de compra y venta de divisas entre intermediarios financieros que transan en el mercado cambiario colombiano, con cumplimiento el mismo día cuando se realiza la negociación de las divisas. Actualmente la Superintendencia Financiera de Colombia es la que calcula y certifica diariamente la TRM con base en las operaciones  registradas el día hábil inmediatamente anterior. Para mayor información sobre la metodología de cálculo puede consultarse la Circular Reglamentaria Externa del Banco de la República DODM-146 del 21 de septiembre de 2004 (Asunto 8).
 				</p>
-				<a href="chartTRM.html" data-transition="slide" >Gráfica TRM</a>
+				<a href="chartTRM.html" data-transition="slide" data-role="button" data-theme="a" >Gráfica TRM</a>
+				<!--a onclick="$.mobile.changePage('chartTRM.html', { transition: 'pop'} )" data-role="button" data-theme="a">Gráfica TRM</a-->
 			</div>
 		</div>
 		<div id="clearFooter"></div>
